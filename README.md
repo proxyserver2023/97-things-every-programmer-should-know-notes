@@ -6,6 +6,7 @@
 5. Beauty is in Simplictity - Jorn Olmheim
 6. Before You Refactor - Rajith Attapattu
 7. Beware the Share - Udi Dahan
+8. The Boy Scout Rule - Robert C Martin [Uncle Bob]
 
 #1. Act With Prudence - Seb Rose
 
@@ -163,3 +164,25 @@ more careful these days about what is shared.
 Beware the share. 
 
 ####Check your context. Only then, proceed.
+
+# The BoyScout Rule - Robert C Martin [Uncle bob]
+
+"Always leave the campground clearer than you found it" - The Boy Scout
+
+If you find a mess on the ground, you clean it up regardless of
+who might have made it. 
+
+You intentionally improve the environment for the
+next group of campers. 
+
+
+What if we followed a similar rule in our code: “Always check a module in
+cleaner than when you checked it out”? 
+
+Regardless of who the original author
+was, what if we always made some effort, no matter how small, to improve the
+module? What would be the result?
+
+1. you might simply improve the name of the variable
+2. split one long function into two smaller functions
+3. might break a **Circular Dependency**, or add an interface to **decouple policy** from detail.
