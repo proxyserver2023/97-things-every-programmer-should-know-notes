@@ -74,12 +74,11 @@ New Project Resolution<br/>
 Reason to format code
 - nobody can own a piece of code by formatting it in his or her favourite way
 - we may prevent developers from using antipatterns in order to avoid some common bugs
-
-* we make sure code formatting is part of the build process so that everybody runs it automatically everytime they compile the code
-* use static code analysis tools to scan the code for unwanted anti patterns.
+- we make sure code formatting is part of the build process so that everybody runs it automatically everytime they compile the code
+- use static code analysis tools to scan the code for unwanted anti patterns.
 if any are found break or build
-* learn to configure those tools so that you can scan for your own project specific antipatterns
-* Do not only measure test coverage but automatically checks the results too.
+- learn to configure those tools so that you can scan for your own project specific antipatterns
+- Do not only measure test coverage but automatically checks the results too.
 
 Again break the build if test coverage is too slow.<br/>
 
@@ -87,3 +86,23 @@ Finally the coding standard should be dynamic rather than static,<br/>
 
 As the Project evolves the needs of project changes and what <br/>
 may have seemed smart in the beginning may not necessarily be smart a few monts later
+
+#Beauty is in Simplicity - Jorn Olmhein
+
+####Summary : make your code as simple as possible
+
+"Beauty of style and harmony and grace and good rhythm depends on Simplicity"
+
+There are number of things we strive for in our code -
+
+- Readability
+- Maintainability
+- Speed Of Development
+- The Elusive quality of beauty
+
+Study other peoples' code <br/>
+if you have not spent enough time studying other peoples code<br/>
+stop reading this right now and find some open source code to study.<br/>
+
+Beauty is born of and found in simplicity
+
