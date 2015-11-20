@@ -111,42 +111,18 @@ Beauty is born of and found in simplicity
 
 #Before you Refactor - Rajith Attapattu
 
-1. The best approach for restructing code is 
-by taking stock of the existing codebase and the tests 
-written against that code. this will help you understand the strengths and weakness of the code as it currently stands,
+1. The best approach for restructing code is by taking stock of the existing codebase and the tests written against that code. this will help you understand the strengths and weakness of the code as it currently stands, so you ensure that you retain the strong points while avoiding the mistakes, we all think we can do better than the existing system .. until we end up with something no better or even worse than the previous incarnation because we failed to learn from the existing system's mistakes
 
-so you ensure that you retain the strong points while avoiding the mistakes, we all think we can do better than the existing system .. until we end up with something no better or even worse than the previous incarnation because we failed to learn from the existing system's mistakes
+2. Avoid the temptation to rewrite everything. it is best to reuse as much code as possible. no matter how ugly the code is, it has already heen tested, reviewed etc. Throwing away the old code - especially if it was in production - means that **you are throwing away months (or years) of tested, batlle-hardened** code that may have had certain workarounds and bugfixes you aren't aware of. if you don't take this into account, the new code you write may end up showing the same mysterious bugs that were fixed in the old code. This will waste a lot of time, effort, and knowledge gained over the years
 
-2. Avoid the temptation to rewrite everything.
-it is best to reuse as much code as possible. no matter how ugly the code is, it has already heen tested, reviewed etc.
+3. Many incremental changes are better than one massive change. incremental changes allows you to gauge the impact on the system more easily through feedback after you make a change. This can lead to frustration and pressure that can in turn result in bad decissions. A couple of test failures at a time is easier to deal with, leading to a more manageable approach
 
-Throwing away the old code - especially if it was in production - means that **you are throwing away months (or years) of tested, batlle-hardened** code that may have had certain workarounds and bugfixes you aren't aware of.
+4. After each development iteration, it is important to ensure that the existing tests pass. Add new tests if the existing tests are not sufficient to cover the changes you made. Do not throw away the tests from the old code with outdue-consideration. On the surface, some if these tests may not appear to be applicable to your new design, but it would be well worth the effort to dig deep down into the reasons why this particular test was added.
 
-if you don't take this into account, the new code you write may end up showing the same mysterious bugs that were fixed in the old code.
-
-This will waste a lot of time, effort, and knowledge gained over the years
-
-3. Many incremental changes are better than one massive change. incremental changes allows you to gauge the impact on the system more easily through feedback after you make a change. 
-
-This can lead to frustration and pressure that can in turn result in bad decissions.
-
-A couple of test failures at a time is easier to deal with, leading to a more manageable approach
-
-4. After each development iteration, it is important to ensure that the existing tests pass. Add new tests if the existing tests are not sufficient to cover the changes you made.
-
-Do not throw away the tests from the old code with outdue-consideration.
-
-On the surface, some if these tests may not appear to be applicable to your new design, but it would be well worth the effort to dig deep down into the reasons why this particular test was added.
-
-5. Personal preferences and ego shouldn’t get in the way. If something isn’t
-broken, why fix it? That the style or the structure of the code does not
-meet your personal preference is not a valid reason for restructuring.
-Thinking you could do a better job than the previous programmer is not
-a valid reason, either
+5. Personal preferences and ego shouldn’t get in the way. If something isn’t broken, why fix it? That the style or the structure of the code does not meet your personal preference is not a valid reason for restructuring. Thinking you could do a better job than the previous programmer is not a valid reason, either
 
 6. New technology is an insufficient reason to refactor. One of the worst reasons
-to refactor is because the current code is way behind all the cool technology we have today, and we believe that a new language or framework can
-do things a lot more elegantly. Unless a cost-benefit analysis shows that
+to refactor is because the current code is way behind all the cool technology we have today, and we believe that a new language or framework can do things a lot more elegantly. Unless a cost-benefit analysis shows that
 a new language or framework will result in significant improvements in
 functionality, maintainability, or productivity, it is best to leave it as it is. 
 
