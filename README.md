@@ -5,7 +5,7 @@
 4. Automate your coding standard - filip van laenen
 5. Beauty is in Simplictity - Jorn Olmheim
 6. Before You Refactor - Rajith Attapattu
-7. 
+7. Beware the Share - Udi Dahan
 
 #1. Act With Prudence - Seb Rose
 
@@ -130,3 +130,36 @@ functionality, maintainability, or productivity, it is best to leave it as it is
 guarantee that the new code will be better—or even as good as—the previous attempt. I have seen and been a part of several failed restructuring
 attempts. It wasn’t pretty, but it was human.
 
+# Beware the Share - Udi Dahan
+
+####Summary : Try to reduce the Dependecy.
+
+Something Critical in Software Development <br/>
+** Context **
+
+The Libraries of Shared Code I created tied the shoelaces of each foot to the
+other. Steps by one business domain could not be made without first synchronizing with the other. Maintenance costs in those independent functions used
+to be negligible, but the common library required an order of magnitude more
+testing.
+
+While I’d decreased the absolute number of lines of code in the system, I had
+increased the number of dependencies. 
+
+The context of these dependencies is
+critical—had they been localized, the sharing may have been justified and had
+some positive value. 
+
+When these dependencies aren’t held in check, their tendrils entangle the larger concerns of the system, even though the code itself
+looks just fine
+
+These mistakes are insidious in that, at their core, they sound like a good idea.
+
+When applied in the right context, these techniques are valuable. 
+
+In the wrong
+context, they increase cost rather than value. When coming into an existing
+codebase with no knowledge of where the various parts will be used, I’m much
+more careful these days about what is shared.
+Beware the share. 
+
+####Check your context. Only then, proceed.
