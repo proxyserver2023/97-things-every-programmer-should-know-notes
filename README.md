@@ -7,6 +7,7 @@
 6. Before You Refactor - Rajith Attapattu
 7. Beware the Share - Udi Dahan
 8. The Boy Scout Rule - Robert C Martin [Uncle Bob]
+9. Check Your Code First Before Looking to Blame Others - Alan Kelly
 
 #1. Act With Prudence - Seb Rose
 
@@ -73,7 +74,7 @@ it'st why the best way to capture requirements is to watch users.
 
 ### Spending an hour watching a user is more informative than spending a day guessing what they want?
 
-# Automate your coding Standard - Filip van lanen
+#4. Automate your coding Standard - Filip van lanen
 New Project Resolution<br/>
 Reason to format code
 - nobody can own a piece of code by formatting it in his or her favourite way
@@ -91,7 +92,7 @@ Finally the coding standard should be dynamic rather than static,<br/>
 As the Project evolves the needs of project changes and what <br/>
 may have seemed smart in the beginning may not necessarily be smart a few monts later
 
-#Beauty is in Simplicity - Jorn Olmhein
+#5. Beauty is in Simplicity - Jorn Olmhein
 
 ####Summary : make your code as simple as possible
 
@@ -110,7 +111,7 @@ stop reading this right now and find some open source code to study.<br/>
 
 Beauty is born of and found in simplicity
 
-#Before you Refactor - Rajith Attapattu
+#6. Before you Refactor - Rajith Attapattu
 
 1. The best approach for restructing code is by taking stock of the existing codebase and the tests written against that code. this will help you understand the strengths and weakness of the code as it currently stands, so you ensure that you retain the strong points while avoiding the mistakes, we all think we can do better than the existing system .. until we end up with something no better or even worse than the previous incarnation because we failed to learn from the existing system's mistakes
 
@@ -131,7 +132,7 @@ functionality, maintainability, or productivity, it is best to leave it as it is
 guarantee that the new code will be better—or even as good as—the previous attempt. I have seen and been a part of several failed restructuring
 attempts. It wasn’t pretty, but it was human.
 
-# Beware the Share - Udi Dahan
+#7. Beware the Share - Udi Dahan
 
 ####Summary : Try to reduce the Dependecy.
 
@@ -165,7 +166,7 @@ Beware the share.
 
 ####Check your context. Only then, proceed.
 
-# The BoyScout Rule - Robert C Martin [Uncle bob]
+#8. The BoyScout Rule - Robert C Martin [Uncle bob]
 
 "Always leave the campground clearer than you found it" - The Boy Scout
 
@@ -186,3 +187,39 @@ module? What would be the result?
 1. you might simply improve the name of the variable
 2. split one long function into two smaller functions
 3. might break a **Circular Dependency**, or add an interface to **decouple policy** from detail.
+
+#9. Check Your Code First Before Looking to blame others - Allan Kelly
+
+Developers-All of us!- often have trouble believing our own code is broken. 
+
+it is just som improbable that, for once, it must be the compiler that's broken.
+
+To Find out your hidden problem 
+- all the debugging advice applies
+- isolate the problem 
+- stubout calls 
+- surround it with tests
+- check calling conventions
+- look out for stack corruption
+- variable type mismatches and try the code on different machines and different build configurations, such as debug and release
+- question your own assumptions and the assumptions of others.
+
+When Someone else is reporting a problem you cannot duplicate, go and see what they are doing. 
+
+They may be doing something you never thought of or doing something in a different order.
+
+My personal Rule is taht if I have a bug I can't pin down, and i'm starting to
+think it's the compiler then it's time to look for stack corruption. this is
+especially true if adding trace code makes the problem move around
+
+#### MultiThreaded Problems
+another source of problems where **hair turns gray** and induce screaming at the machine. All the recommendations to favor simple code are multiplied when a system is multithreaded.
+
+Debugging and unit tests cannot be relied on to find such bugs with any consistency, so simplicity of design is paramount.
+
+#### Sherlock
+So, before you rush to blame the compiler,
+remember -
+**"Once you eliminate the impossible, whatever remains,
+no matter how improbable, must be the truth"
+
