@@ -8,6 +8,7 @@
 7. Beware the Share - Udi Dahan
 8. The Boy Scout Rule - Robert C Martin [Uncle Bob]
 9. Check Your Code First Before Looking to Blame Others - Alan Kelly
+10. Choose Your Tools With Care - Giovani Asproni
 
 #1. Act With Prudence - Seb Rose
 
@@ -222,4 +223,28 @@ So, before you rush to blame the compiler,
 remember -
 **"Once you eliminate the impossible, whatever remains,
 no matter how improbable, must be the truth"
+
+#10. Choose Your Tools With Care - Giovanni Asproni
+
+Modern Applications are very rarely built from scratch. They are assembled using external tools - components, libraries, and frameworks - for a number of good reasons:
+
+#### While Making Choice you need to mind
+1. Different tools may rely on different assumptions about their context—e.g.,
+surrounding infrastructure, control model, data model, communication
+protocols, etc.—which can lead to an **architectural mismatch** between the
+application and the tools. 
+
+Such a mismatch leads to hacks and workarounds
+that will make the code more complex than necessary.
+
+2. Different tools have different lifecycles, and upgrading one of them may
+become an extremely difficult and time-consuming task since the new functionality, design changes, or even bug fixes may cause incompatibilities
+
+#### My Personal Stratergy
+
+1. start small by using the tools that are absolutely necessary.
+
+2. Usually the initial focus is on removing the need to engage in low-level infrastructure programming (and problems), e.g., by using some middleware instead of using raw sockets for distributed applications
+
+3. And then add more if needed. I also tend to isolate the external tools from my business domain objects by means of interfaces and layering, so that I can change the tool if I have to with a minimal amount of pain. A positive side effect of this approach is that I generally end up with a smaller application that uses fewer external tools than originally forecast.
 
